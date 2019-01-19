@@ -1,7 +1,18 @@
 version: '2'
 services:
     syslog-ng:
-        build: .
+        build: 
+            context: ./
+            dockerfile: ./syslog-ng/syslog.dockerfile
         ports:
             - "514:514/udp"
             - "514:514/tcp"
+    elasticsearch:
+        build: 
+            context: ./
+            dockerfile: ./elasticsearch/es.dockerfile
+      
+    kibana:
+        build: 
+            context: ./
+            dockerfile: ./kibana/kb.dockerfile
