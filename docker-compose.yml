@@ -1,0 +1,7 @@
+version: '2'
+services:
+    syslog-ng:
+        build: .
+        ports:
+            - "514:514/udp"
+            - "514:514/tcp"
